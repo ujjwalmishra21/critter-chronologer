@@ -30,6 +30,10 @@ public class CustomerService {
         return null;
     }
     public Customer getCustomerByPet(long id){
-        return customerRepository.findByPets(id);
+        Optional<Customer> customer = customerRepository.findByPets(id);
+        if(customer.isPresent()){
+            return customer.get();
+        }
+        return null;
     }
 }

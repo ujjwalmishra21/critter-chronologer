@@ -16,7 +16,7 @@ public class Customer {
     private String notes;
     private String phoneNumber;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL, targetEntity = Pet.class)
     private List<Pet> pets;
 
     public Long getId() {
@@ -58,4 +58,5 @@ public class Customer {
     public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
+
 }
