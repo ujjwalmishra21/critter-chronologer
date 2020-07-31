@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface PetRepository extends CrudRepository<Pet,Long> {
 
-    public List<Pet> findAllByCustomer(Long id);
+    public List<Pet> findAllByCustomer(long id);
 }

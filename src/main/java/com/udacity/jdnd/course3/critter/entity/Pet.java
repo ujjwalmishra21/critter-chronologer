@@ -22,7 +22,7 @@ public class Pet {
 
     private String notes;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id")
     private Customer customer;
 

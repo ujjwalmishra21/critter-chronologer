@@ -5,6 +5,8 @@ import com.udacity.jdnd.course3.critter.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CustomerService {
     @Autowired
@@ -16,5 +18,18 @@ public class CustomerService {
 
     public Iterable<Customer> getAllCustomers(){
         return customerRepository.findAll();
+    }
+
+    public Customer getCustomerById(long id){
+
+        Optional<Customer> optionalCustomer = customerRepository.findById(id);
+
+        if(optionalCustomer.isPresent()){
+          return optionalCustomer.get();
+        }
+        return null;
+    }
+    public Customer getCustomerByPet(long id){
+        return customerRepository.findByPets(id);
     }
 }

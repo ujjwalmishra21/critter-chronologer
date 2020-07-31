@@ -1,8 +1,11 @@
 package com.udacity.jdnd.course3.critter.pet;
 
+
+import com.udacity.jdnd.course3.critter.entity.Customer;
 import com.udacity.jdnd.course3.critter.entity.Pet;
+import com.udacity.jdnd.course3.critter.service.CustomerService;
 import com.udacity.jdnd.course3.critter.service.PetService;
-import org.checkerframework.checker.units.qual.A;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,18 +24,21 @@ public class PetController {
     @Autowired
     PetService petService;
 
+    @Autowired
+    CustomerService customerService;
+
     @PostMapping
-    public PetDTO save(@RequestBody PetDTO petDTO){
+    public PetDTO savePet(@RequestBody PetDTO petDTO){
         throw new UnsupportedOperationException();
     }
     @PostMapping("/{ownerId}")
-    public PetDTO savePet(@RequestBody PetDTO petDTO, @PathVariable Long ownerId) {
+    public PetDTO save(@RequestBody PetDTO petDTO, @PathVariable Long ownerId) {
 
         petDTO.setOwnerId(ownerId);
-
         Pet pet = convertPetDTOToPet(petDTO);
+        Customer customer = customerService.getCustomerById(ownerId);
+        pet.setCustomer(customer);
         pet = petService.savePet(pet);
-//        System.out.println("OWNER ID---" + pet.getCustomer().getId());
         return convertPetToPetDTO(pet);
     }
 
@@ -65,13 +71,13 @@ public class PetController {
     public static PetDTO convertPetToPetDTO(Pet pet){
         PetDTO petDTO = new PetDTO();
         BeanUtils.copyProperties(pet,petDTO);
+        petDTO.setOwnerId(pet.getCustomer().getId());
         return petDTO;
     }
 
     public static Pet convertPetDTOToPet(PetDTO petDTO){
         Pet pet = new Pet();
         BeanUtils.copyProperties(petDTO,pet);
-//        System.out.println("PET ID::" + pet.getCustomer().getId());
         return pet;
     }
 }
