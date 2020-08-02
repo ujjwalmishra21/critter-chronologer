@@ -1,6 +1,7 @@
 package com.udacity.jdnd.course3.critter.service;
 
 import com.udacity.jdnd.course3.critter.entity.Customer;
+import com.udacity.jdnd.course3.critter.entity.Pet;
 import com.udacity.jdnd.course3.critter.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,16 +22,14 @@ public class CustomerService {
     }
 
     public Customer getCustomerById(long id){
-
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
-
         if(optionalCustomer.isPresent()){
           return optionalCustomer.get();
         }
         return null;
     }
-    public Customer getCustomerByPet(long id){
-        Optional<Customer> customer = customerRepository.findByPets(id);
+    public Customer getCustomerByPet(Pet pet){
+        Optional<Customer> customer = customerRepository.findByPets(pet);
         if(customer.isPresent()){
             return customer.get();
         }

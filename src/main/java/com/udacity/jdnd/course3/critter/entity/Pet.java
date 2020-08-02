@@ -23,9 +23,9 @@ public class Pet {
 
     private String notes;
 
-    @JsonIgnore
+
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Customer customer;
 
     public Long getId() {

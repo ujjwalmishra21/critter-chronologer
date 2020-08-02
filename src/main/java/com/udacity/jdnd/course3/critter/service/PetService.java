@@ -7,6 +7,7 @@ import com.udacity.jdnd.course3.critter.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,9 +33,15 @@ public class PetService {
         return petRepository.findAll();
     }
 
-    public List<Pet> findAllByOwner(long id){
-        return petRepository.findAllByCustomer(id);
+    public List<Pet> findAllByOwner(Customer customer){
+        return petRepository.findAllByCustomer(customer);
     }
 
+    public List<Pet> getAllPetById(List<Long> ids){
+        Iterable<Pet> pets = petRepository.findAllById(ids);
+        List<Pet> petList = new ArrayList<>();
+        pets.forEach(petList::add);
+        return petList;
+    }
 
 }
