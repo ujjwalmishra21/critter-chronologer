@@ -3,10 +3,7 @@ package com.udacity.jdnd.course3.critter.entity;
 import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
 import org.hibernate.annotations.Nationalized;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.List;
 import java.util.Set;
@@ -25,6 +22,17 @@ public class Employee {
 
     @ElementCollection
     private Set<DayOfWeek> daysAvailable;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "employees")
+    private List<Schedule> schedules;
+
+    public List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }
 
     public Long getId() {
         return id;

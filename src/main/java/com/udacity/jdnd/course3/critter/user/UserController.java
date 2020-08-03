@@ -84,17 +84,29 @@ public class UserController {
 
     @GetMapping("/employee/availability")
     public List<EmployeeDTO> findEmployeesForService(@RequestBody EmployeeRequestDTO employeeDTO) {
-        throw new UnsupportedOperationException();
+        List<Employee> employees = employeeService.getEmployeesForService(employeeDTO.getDate(),employeeDTO.getSkills());
+        List<EmployeeDTO> employeeDTOS = new ArrayList<>();
+        for(Employee employee:employees){
+            employeeDTOS.add(convertEmployeeToEmployeeDTO(employee));
+        }
+        return employeeDTOS;
     }
 
     public CustomerDTO convertCustomerToCustomerDTO(Customer customer){
         CustomerDTO customerDTO = new CustomerDTO();
         BeanUtils.copyProperties(customer,customerDTO);
+        List<Pet> pets = customer.getPets();
+        if(pets != null) {
+            List<Long> petIds = new ArrayList<>();
+            for (Pet pet : pets) {
+                petIds.add(pet.getId());
+            }
+            customerDTO.setPetIds(petIds);
+        }
         return customerDTO;
     }
 
     public Customer convertCustomerDTOToCustomer(CustomerDTO customerDTO){
-        System.out.println("CUSTOMER NAME----" + customerDTO.getName());
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDTO,customer);
         return customer;
@@ -107,6 +119,18 @@ public class UserController {
     }
 
     public Employee convertEmployeeDTOToEmployee(EmployeeDTO employeeDTO){
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(employeeDTO,employee);
+        return employee;
+    }
+
+    public EmployeeRequestDTO convertEmployeeToEmployeeRequestDTO(Employee employee){
+        EmployeeRequestDTO employeeDTO = new EmployeeRequestDTO();
+        BeanUtils.copyProperties(employee,employeeDTO);
+        return employeeDTO;
+    }
+
+    public Employee convertEmployeeRequestDTOToEmployee(EmployeeRequestDTO employeeDTO){
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO,employee);
         return employee;

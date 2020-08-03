@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface ScheduleRepository extends CrudRepository<Schedule,Long> {
     public List<Schedule> findAllByPets(Pet pet);
-    public List<Employee> findAllByEmployees(Employee employee);
+    public List<Schedule> findAllByEmployees(Employee employee);
 }

@@ -20,11 +20,18 @@ public class Schedule {
     @ElementCollection
     private Set<EmployeeSkill> activities;
 
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name="schedule_employee",
+        joinColumns = @JoinColumn(name="schdeule_emp_id"),
+        inverseJoinColumns = @JoinColumn(name = "employee_id")
+    )
     private List<Employee> employees;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name="schdeule_pet",
+        joinColumns = @JoinColumn(name = "schedule_pet_id"),
+        inverseJoinColumns = @JoinColumn(name = "pet_id")
+    )
     private List<Pet> pets;
 
     public Long getId() {

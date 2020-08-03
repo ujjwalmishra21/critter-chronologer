@@ -69,7 +69,7 @@ public class CritterFunctionalTest {
 
         PetDTO petDTO = createPetDTO();
         petDTO.setOwnerId(newCustomer.getId());
-        PetDTO newPet = petController.savePet(petDTO);
+        PetDTO newPet = petController.save(petDTO,newCustomer.getId());
 
         //make sure pet contains customer id
         PetDTO retrievedPet = petController.getPet(newPet.getId());
@@ -94,10 +94,10 @@ public class CritterFunctionalTest {
 
         PetDTO petDTO = createPetDTO();
         petDTO.setOwnerId(newCustomer.getId());
-        PetDTO newPet = petController.savePet(petDTO);
+        PetDTO newPet = petController.save(petDTO,newCustomer.getId());
         petDTO.setType(PetType.DOG);
         petDTO.setName("DogName");
-        PetDTO newPet2 = petController.savePet(petDTO);
+        PetDTO newPet2 = petController.save(petDTO,newCustomer.getId());
 
         List<PetDTO> pets = petController.getPetsByOwner(newCustomer.getId());
         Assertions.assertEquals(pets.size(), 2);
@@ -112,7 +112,7 @@ public class CritterFunctionalTest {
 
         PetDTO petDTO = createPetDTO();
         petDTO.setOwnerId(newCustomer.getId());
-        PetDTO newPet = petController.savePet(petDTO);
+        PetDTO newPet = petController.save(petDTO,newCustomer.getId());
 
         CustomerDTO owner = userController.getOwnerByPet(newPet.getId());
         Assertions.assertEquals(owner.getId(), newCustomer.getId());
@@ -177,7 +177,7 @@ public class CritterFunctionalTest {
         CustomerDTO customerDTO = userController.saveCustomer(createCustomerDTO());
         PetDTO petTemp = createPetDTO();
         petTemp.setOwnerId(customerDTO.getId());
-        PetDTO petDTO = petController.savePet(petTemp);
+        PetDTO petDTO = petController.save(petTemp,customerDTO.getId());
 
         LocalDate date = LocalDate.of(2019, 12, 25);
         List<Long> petList = Lists.newArrayList(petDTO.getId());
@@ -290,7 +290,7 @@ public class CritterFunctionalTest {
                 .mapToObj(i -> createPetDTO())
                 .map(p -> {
                     p.setOwnerId(cust.getId());
-                    return petController.savePet(p).getId();
+                    return petController.save(p,cust.getId()).getId();
                 }).collect(Collectors.toList());
         return scheduleController.createSchedule(createScheduleDTO(petIds, employeeIds, date, activities));
     }

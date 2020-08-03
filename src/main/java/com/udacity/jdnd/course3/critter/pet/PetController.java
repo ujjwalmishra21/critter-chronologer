@@ -38,6 +38,7 @@ public class PetController {
         Pet pet = convertPetDTOToPet(petDTO);
         Customer customer = customerService.getCustomerById(ownerId);
         pet.setCustomer(customer);
+
         pet = petService.savePet(pet);
         return convertPetToPetDTO(pet);
     }
@@ -77,6 +78,7 @@ public class PetController {
         PetDTO petDTO = new PetDTO();
         BeanUtils.copyProperties(pet,petDTO);
         petDTO.setOwnerId(pet.getCustomer().getId());
+
         return petDTO;
     }
 
