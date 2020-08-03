@@ -10,9 +10,12 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class ScheduleService {
@@ -48,5 +51,25 @@ public class ScheduleService {
 
     public List<Schedule> getScheduleForEmployee(Employee employee){
         return scheduleRepository.findAllByEmployees(employee);
+    }
+
+    public void addEmployeeToSchedule(List<Schedule> schedules,Employee employee){
+        schedules = new CopyOnWriteArrayList<>(schedules);
+        if(schedules != null){
+            for (Schedule schedule:schedules){
+                List<Employee> employees = schedule.getEmployee();
+                if(employees != null){
+                    employees.add(employee);
+                }else{
+                    employees = new ArrayList<>();
+                    employees.add(employee);
+                }
+                schedule.setEmployee(employees);
+                scheduleRepository.save(schedule);
+            }
+        }
+
+
+
     }
 }
