@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class EmployeeService {
@@ -58,7 +59,7 @@ public class EmployeeService {
     }
 
     public void addScheduleForEmployee(List<Employee> employeeList,Schedule schedule){
-
+        employeeList = new CopyOnWriteArrayList<>(employeeList);
         if(employeeList != null){
             for(Employee employee:employeeList){
                 List<Schedule> schedules = employee.getSchedules();

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5440406f-531c-4a90-9068-0c48c22e2a40" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/PetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jdnd/course3/critter/service/PetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jdnd/course3/critter/service/PetService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +38,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.CritterFunctionalTest.testFindScheduleByEntities">
+  <component name="RunManager" selected="JUnit.CritterFunctionalTest">
     <configuration name="CritterFunctionalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="critter" />
       <extension name="coverage">
@@ -118,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CritterFunctionalTest.testFindScheduleByEntities" />
         <item itemvalue="JUnit.CritterFunctionalTest" />
+        <item itemvalue="JUnit.CritterFunctionalTest.testFindScheduleByEntities" />
         <item itemvalue="JUnit.CritterFunctionalTest.testFindPetsByOwner" />
         <item itemvalue="JUnit.CritterFunctionalTest.testAddPetsToCustomer" />
         <item itemvalue="JUnit.CritterFunctionalTest.testSchedulePetsForServiceWithEmployee" />
@@ -156,42 +158,50 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="541" y="301" width="455" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1596360512383" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1596364915382">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1596467395418">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596364915382" />
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1596436000051">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596467395418" />
+    <state width="1493" height="220" key="GridCell.Tab.0.bottom" timestamp="1596472359481">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596436000051" />
-    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1596436000051">
+    <state width="1493" height="220" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596472359481" />
+    <state width="1493" height="220" key="GridCell.Tab.0.center" timestamp="1596472359481">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596436000051" />
-    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1596436000051">
+    <state width="1493" height="220" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596472359481" />
+    <state width="1493" height="220" key="GridCell.Tab.0.left" timestamp="1596472359481">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596436000051" />
-    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1596436000051">
+    <state width="1493" height="220" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596472359481" />
+    <state width="1493" height="220" key="GridCell.Tab.0.right" timestamp="1596472359481">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596436000051" />
-    <state width="1493" height="234" key="GridCell.Tab.1.bottom" timestamp="1596435997277">
+    <state width="1493" height="220" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596472359481" />
+    <state width="1493" height="234" key="GridCell.Tab.1.bottom" timestamp="1596436442431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596435997277" />
-    <state width="1493" height="234" key="GridCell.Tab.1.center" timestamp="1596435997277">
+    <state width="1493" height="234" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596436442431" />
+    <state width="1493" height="234" key="GridCell.Tab.1.center" timestamp="1596436442431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1596435997277" />
-    <state width="1493" height="234" key="GridCell.Tab.1.left" timestamp="1596435997277">
+    <state width="1493" height="234" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1596436442431" />
+    <state width="1493" height="234" key="GridCell.Tab.1.left" timestamp="1596436442431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1596435997277" />
-    <state width="1493" height="234" key="GridCell.Tab.1.right" timestamp="1596435997277">
+    <state width="1493" height="234" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1596436442431" />
+    <state width="1493" height="234" key="GridCell.Tab.1.right" timestamp="1596436442431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1596435997277" />
+    <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1596436442431" />
+    <state x="249" y="6" key="SettingsEditor" timestamp="1596467396851">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1596467396851" />
+    <state x="477" y="165" width="581" height="534" key="find.popup" timestamp="1596472063316">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="477" y="165" width="581" height="534" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1596472063316" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1596433846971">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -216,7 +226,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/EmployeeService.java</url>
-          <line>71</line>
+          <line>72</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -271,7 +281,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/PetService.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class PetService {
@@ -51,7 +52,7 @@ public class PetService {
     }
 
     public void addScheduleForPet(List<Pet> petList, Schedule schedule){
-
+        petList = new CopyOnWriteArrayList<>(petList);
         if(petList != null){
             for(Pet pet:petList){
                 List<Schedule> schedules = pet.getSchedules();
