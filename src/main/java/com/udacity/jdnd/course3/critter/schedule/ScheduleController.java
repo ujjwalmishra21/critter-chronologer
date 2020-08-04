@@ -62,7 +62,7 @@ public class ScheduleController {
     public List<ScheduleDTO> getScheduleForPet(@PathVariable long petId) {
         Pet pet = petService.getPetById(petId);
         if(pet == null){
-            return null;
+            throw new UnsupportedOperationException("Pet not found");
         }
         List<Schedule> schedules = scheduleService.getScheduleForPet(pet);
 
@@ -77,7 +77,7 @@ public class ScheduleController {
     public List<ScheduleDTO> getScheduleForEmployee(@PathVariable long employeeId) {
         Employee employee = employeeService.getEmployeeById(employeeId);
         if(employee == null){
-            return null;
+            throw new UnsupportedOperationException("Employee not found");
         }
         List<Schedule> schedules = scheduleService.getScheduleForEmployee(employee);
 
@@ -92,11 +92,11 @@ public class ScheduleController {
     public List<ScheduleDTO> getScheduleForCustomer(@PathVariable long customerId) {
         Customer customer = customerService.getCustomerById(customerId);
         if(customer == null){
-            return null;
+            throw new UnsupportedOperationException("Customer for not found");
         }
         List<Pet> pets = petService.findAllByOwner(customer);
-        if(pets.size() == 0){
-            return null;
+        if(pets == null){
+            throw new UnsupportedOperationException("Pets not found for owwner");
         }
         List<ScheduleDTO> scheduleDTOS = new ArrayList<>();
         List<Schedule> scheduleList = new ArrayList<>();
@@ -129,11 +129,6 @@ public class ScheduleController {
             }
             scheduleDTO.setPetIds(petIds);
         }
-
-
-
-
-
         return scheduleDTO;
     }
 

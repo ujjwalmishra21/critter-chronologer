@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5440406f-531c-4a90-9068-0c48c22e2a40" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/service/ScheduleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/pet/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/pet/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/schedule/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/schedule/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jdnd/course3/critter/user/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.CritterFunctionalTest">
+  <component name="RunManager" selected="Application.CritterApplication">
     <configuration name="CritterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udacity.jdnd.course3.critter.CritterApplication" />
       <module name="critter" />
@@ -161,22 +159,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596467395418" />
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1596485342128">
+    <state width="1493" height="220" key="GridCell.Tab.0.bottom" timestamp="1596551384222">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596485342128" />
-    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1596485342128">
+    <state width="1493" height="220" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596551384222" />
+    <state width="1493" height="220" key="GridCell.Tab.0.center" timestamp="1596551384222">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596485342128" />
-    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1596485342128">
+    <state width="1493" height="220" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596551384222" />
+    <state width="1493" height="220" key="GridCell.Tab.0.left" timestamp="1596551384222">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596485342128" />
-    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1596485342128">
+    <state width="1493" height="220" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596551384222" />
+    <state width="1493" height="220" key="GridCell.Tab.0.right" timestamp="1596551384222">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596485342128" />
+    <state width="1493" height="220" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596551384222" />
     <state width="1493" height="234" key="GridCell.Tab.1.bottom" timestamp="1596485342128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -201,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="477" y="165" width="581" height="534" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1596472063316" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1596485046380">
+    <state x="425" y="197" key="run.anything.popup" timestamp="1596550624019">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1596485046380" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1596550624019" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1596123205815">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

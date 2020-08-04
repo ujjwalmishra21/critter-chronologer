@@ -37,6 +37,9 @@ public class PetController {
         petDTO.setOwnerId(ownerId);
         Pet pet = convertPetDTOToPet(petDTO);
         Customer customer = customerService.getCustomerById(ownerId);
+        if(customer == null){
+            throw new UnsupportedOperationException("Owner not found for given information");
+        }
         pet.setCustomer(customer);
 
         pet = petService.savePet(pet);
@@ -46,6 +49,9 @@ public class PetController {
     @GetMapping("/{petId}")
     public PetDTO getPet(@PathVariable long petId) {
         Pet pet = petService.getPetById(petId);
+        if(pet == null){
+            throw new UnsupportedOperationException("Pet not found");
+        }
         return convertPetToPetDTO(pet);
     }
 
@@ -63,7 +69,7 @@ public class PetController {
     public List<PetDTO> getPetsByOwner(@PathVariable long ownerId) {
         Customer customer = customerService.getCustomerById(ownerId);
         if(customer == null){
-            return null;
+            throw new UnsupportedOperationException("Owner not found");
         }
         List<Pet> pets = petService.findAllByOwner(customer);
 

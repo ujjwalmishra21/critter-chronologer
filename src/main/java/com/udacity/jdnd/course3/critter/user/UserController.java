@@ -53,12 +53,12 @@ public class UserController {
 
     @GetMapping("/customer/pet/{petId}")
     public CustomerDTO getOwnerByPet(@PathVariable long petId){
-        System.out.println("PET ID++" + petId);
+
         Pet pet = petService.getPetById(petId);
         if(pet == null){
-            return null;
+            throw new UnsupportedOperationException("No pet found");
         }
-        System.out.println("PET NAME " + pet.getName());
+
         Customer customer = customerService.getCustomerByPet(pet);
         return convertCustomerToCustomerDTO(customer);
 
